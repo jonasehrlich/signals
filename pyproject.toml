@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "signals"
+version = "0.1.0"
+description = "Implementation of TC39 signals proposal in Python (https://github.com/tc39/proposal-signals)"
+authors = ["Jonas Ehrlich <jonas.ehrlich@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.1"
+pytest = "^8.1.1"
+pytest-sugar = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
