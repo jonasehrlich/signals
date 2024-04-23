@@ -14,6 +14,9 @@ class Signal(Generic[T]):
         self._is_dirty = False
         self._sinks: set[Signal[Any] | _ComputedSignal[Any, Any]] = set()
 
+    def __str__(self) -> str:
+        return str(self.get())
+
     def get(self) -> T:
         return self._value
 
@@ -42,6 +45,9 @@ class _ComputedSignal(Generic[SourceT, T]):
         self._value = None
         self._is_dirty = True
         self._sinks: set[Signal[Any] | _ComputedSignal[Any, Any]] = set()
+
+    def __str__(self) -> str:
+        return str(self.get())
 
     def get(self) -> T:
         if self._is_dirty or self._value is None:
