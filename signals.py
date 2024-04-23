@@ -43,9 +43,6 @@ class _ComputedSignal(Generic[SourceT, T]):
         self._is_dirty = True
         self._sinks: set[Signal[Any] | _ComputedSignal[Any, Any]] = set()
 
-    def __repr__(self) -> str:
-        return repr(self.get())
-
     def get(self) -> T:
         if self._is_dirty or self._value is None:
             self._value = self._func(self._source.get())
